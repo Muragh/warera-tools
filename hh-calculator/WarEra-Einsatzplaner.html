@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>H&amp;H - Rechner</title><meta name="description" content="Wie weit darf dein Health-Balken jetzt sinken? Plane volle Health zur Einsatzzeit, mit und ohne Essen."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1728'/%3E%3Cpath d='M7 16h5l3-7 4 14 3-7h3' fill='none' stroke='%233de0a0' stroke-width='3'/%3E%3C/svg%3E"><style>:root{color-scheme:dark;--bg:#0a111c;--panel:#111e2e;--line:#26364a;--ink:#edf4fd;--muted:#a1b3c8;--green:#3de0a0;--blue:#7ab7ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 90% 0,#15334a66,transparent 55%),var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:1160px;padding:30px 38px;margin:auto}header,footer,.brand,.card-head,.row{display:flex;align-items:center}header{justify-content:space-between;padding-bottom:26px;border-bottom:1px solid var(--line)}.brand{gap:12px;font-size:.875rem;font-weight:750;letter-spacing:.08em}.mark{display:grid;place-items:center;width:35px;height:35px;background:var(--green);color:var(--bg);font-size:28px;border-radius:7px}.muted{color:var(--muted);font-weight:500}.tag,.pill{font-size:.875rem;border:1px solid var(--line);border-radius:30px;padding:5px 11px;color:var(--muted)}.intro{margin:34px 0 26px}.eyebrow{font-size:.875rem;letter-spacing:.13em;color:var(--green);font-weight:700;margin:0 0 12px}h1{font-size:clamp(2rem,4.4vw,3.5rem);line-height:1.13;font-weight:680;letter-spacing:-.045em;margin:0}h1 span{color:var(--muted)}.intro>p:last-child{color:var(--muted);margin:17px 0 0}.setup{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;background:#111e2e99;border:1px solid var(--line);padding:24px;border-radius:12px}label{display:block;font-size:.875rem;font-weight:600;color:var(--muted)}input,select,button{font:inherit;border-radius:6px}input,select{width:100%;min-width:0;border:1px solid #395069;background:#0c1725;color:var(--ink);padding:12px;margin-top:7px;height:49px}input::placeholder{color:#7b92aa}button{border:0;background:var(--green);color:#082018;padding:12px 17px;font-weight:700;cursor:pointer;white-space:nowrap}button:hover{filter:brightness(1.08)}button:disabled{opacity:.55;cursor:wait}.row{gap:10px}.row button{margin-top:7px;height:49px}.row input{flex:1}.hint{font-size:.875rem;color:var(--muted);margin:9px 0 0}details{border:1px solid var(--line);border-radius:8px;margin-top:15px;padding:14px 18px}summary{cursor:pointer;color:var(--muted);font-size:.875rem}.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:17px}.live{font-size:.875rem;color:var(--muted);padding:20px 1px}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:20px}.result{border:1px solid var(--line);background:linear-gradient(145deg,#132336,#0e1826);border-radius:12px;overflow:hidden}.food{border-top:3px solid var(--green)}.card-head{padding:20px 23px;gap:11px;border-bottom:1px solid var(--line);flex-wrap:wrap}.number{font: .875rem ui-monospace,monospace;color:var(--muted)}h2{font-size:1.2rem;font-weight:650;margin:0}.pill{margin-left:auto;font-size:.875rem;padding:3px 9px}.result-body{padding:25px}.food-inputs{padding:17px 23px 0;display:grid;grid-template-columns:1.5fr 1fr;gap:14px}.empty{color:var(--muted);min-height:65px}.bar{height:28px;border-radius:5px;background:#26364a;position:relative;display:flex;overflow:visible;margin:18px 0 9px}.bar .safe{background:var(--green);height:100%;border-radius:0 5px 5px 0}.bar .reserve{background:#31816c;height:100%;border-radius:5px 0 0 5px}.bar .marker{position:absolute;top:-5px;bottom:-5px;width:3px;background:white;transform:translateX(-1px)}.bar-key{display:flex;justify-content:space-between;color:var(--muted);font-size:.875rem;margin-bottom:23px}.big{font-size:3rem;font-weight:700;letter-spacing:-.04em;line-height:1.15}.big small{font-size:1rem;color:var(--muted);font-weight:500;letter-spacing:0}.metric-label{color:var(--muted);font-size:.875rem;margin:0 0 9px}.recommendation{font-size:1.1rem;margin:18px 0 14px}.recommendation strong{color:var(--green)}.warn{color:#ffd48b!important}.stats{border-top:1px solid var(--line);padding-top:15px;display:flex;justify-content:space-between;gap:15px}.stats p{margin:0;font-size:.875rem;color:var(--muted)}.stats strong{display:block;color:var(--ink);font-size:1rem}.schedule{margin:20px 0 0;padding-left:20px;font-size:.875rem;color:var(--muted)}.schedule li{padding:4px 0}.footnote{color:var(--muted);font-size:.875rem;margin:20px 0 0}.explanation{margin-top:23px}.explanation p{color:var(--muted);font-size:.875rem}a{color:var(--blue)}footer{justify-content:space-between;gap:20px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:.875rem;color:var(--muted)}#matches{display:grid;gap:6px;margin-top:10px}#matches:empty{display:none}#matches button{background:#1d3850;color:var(--ink);text-align:left;white-space:normal}*:focus-visible{outline:3px solid var(--blue);outline-offset:3px}.error{color:#ffd48b}@media(max-width:850px){main{padding:22px}.setup{grid-template-columns:1fr;gap:20px}.comparison{grid-template-columns:1fr}.intro{margin:26px 0}.fields{grid-template-columns:1fr 1fr}}@media(max-width:480px){main{padding:17px}.tag{display:none}.brand{font-size:.75rem;letter-spacing:.04em}.setup{padding:17px}.row{flex-wrap:wrap}.row button{width:100%}.fields{grid-template-columns:1fr 1fr}.card-head,.result-body{padding:18px}.pill{margin-left:0}.food-inputs{padding:17px 18px 0;grid-template-columns:1fr}footer{align-items:flex-start;flex-direction:column}.big{font-size:2.5rem}}
+.armor-status{font-size:.875rem;color:var(--muted);margin:14px 0 0}.skill-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;align-items:start}.skill-card{padding:17px;background:#0c1725;border:1px solid var(--line);border-radius:8px}.skill-card h3{margin:0 0 12px;font-size:1rem;color:var(--green)}.skill-card label+label{margin-top:12px}.skill-actions{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:17px}.skill-actions p{margin:0}@media(max-width:700px){.skill-cards{grid-template-columns:1fr}}
+.time-controls{display:grid;grid-template-columns:1.2fr 1fr;gap:10px}.hour-tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:13px}.hour-tile{padding:9px 3px;background:#182c41;color:var(--muted);border:1px solid #34506a;font-size:.875rem}.hour-tile.selected{color:#082018;background:var(--green);border-color:var(--green)}.skill-stepper{display:flex;align-items:center;gap:6px}.skill-stepper button{width:34px;height:42px;padding:0;flex-shrink:0;background:#233e55;color:var(--ink);font-size:1.25rem;margin-top:7px}.skill-stepper select{font-size:.875rem;padding:8px}.skill-steps{display:flex;gap:4px;margin:12px 0}.skill-steps span{flex:1;height:8px;border-radius:2px;background:#26364a}.skill-steps .filled{background:var(--green)}.stock-option{margin:0;padding:9px;align-self:start}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:420px){.hour-tiles{grid-template-columns:repeat(4,1fr)}}
+[hidden]{display:none!important}.setup{display:block}.gear-entry{margin-top:18px;padding-top:17px;border-top:1px solid var(--line)}.gear-entry>label{max-width:240px}.gear-entry input{text-align:center}.time-section{margin-top:20px;padding:20px 24px;border:1px solid var(--line);background:#111e2e99;border-radius:12px}.time-controls{max-width:380px}.hour-tiles{grid-template-columns:repeat(12,minmax(0,1fr));gap:5px}.hour-tile{padding:5px 2px;min-height:30px;font-weight:500}.comparison{display:block}.food-toggle{display:flex;align-items:center;gap:10px;margin-left:auto;cursor:pointer}.switch-track{position:relative;width:42px;height:24px;border-radius:30px;background:#34506a;display:inline-block}.switch-track input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer;z-index:1}.switch-thumb{position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#dce6ef;transition:transform .15s,background .15s}.switch-track:has(input:checked){background:var(--green)}.switch-track input:checked+.switch-thumb{transform:translateX(18px);background:#09271d}.switch-track:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:3px}@media(max-width:700px){.hour-tiles{grid-template-columns:repeat(6,minmax(0,1fr))}}@media(max-width:420px){.time-section{padding:17px}.hour-tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.gear-entry{max-width:560px;margin-left:auto;margin-right:auto}.armor-total{text-align:center;display:flex;flex-direction:column;gap:3px;margin-bottom:18px}.armor-total span{font-size:.875rem;color:var(--muted)}.armor-total output{font-size:2.5rem;font-weight:700;color:var(--green);line-height:1.2}.armor-slots{display:grid;grid-template-columns:1fr 1fr;gap:16px}.armor-slots label{text-align:center}.armor-slots input{text-align:center;font-size:1.2rem;font-weight:650}.gear-entry .armor-status{text-align:center}.food-inputs{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 23px;border-bottom:1px solid var(--line)}.food-label{font-size:.875rem;color:var(--muted)}.food-choices{display:flex;gap:6px;flex:1}.food-choices button{background:#172e43;color:var(--ink);border:1px solid #34506a;padding:8px 12px;font-size:.875rem;flex:1;max-width:140px}.food-choices button[aria-checked=true]{border-color:var(--green);background:#164237}.food-choices small{color:var(--muted);font-weight:400;margin-left:5px}.stock-option{border:0;padding:0;margin:0}.stock-option input{height:36px;font-size:.875rem;padding:6px 10px}.stock-option[open]{width:100%;max-width:260px}.stock-option summary{font-size:.875rem}@media(max-width:480px){.food-inputs{padding:12px 18px;gap:9px}.food-choices{flex-basis:100%}.food-choices button{padding:7px 9px}.armor-slots{gap:10px}}
+</style></head>
+<body><main>
+<header><div class="brand"><span class="mark" aria-hidden="true">＋</span><span>WARERA <span class="muted">/ EINSATZPLANER</span></span></div></header>
+<section class="intro"><p class="eyebrow">BEREIT ZUM EINSATZ</p><h1>H&amp;H - Rechner</h1></section>
+<section class="setup" aria-label="Einsatz planen"><div class="profile"><label for="player">Dein Spieler</label><form id="lookup"><div class="row"><input id="player" placeholder="Name, Spieler-ID oder Profil-Link" autocomplete="off" required><button id="load" type="submit">Werte laden</button></div></form><p id="profile-status" class="hint" role="status">Keine Anmeldung nötig. Nur öffentliche Spielerwerte.</p><div id="matches" aria-label="Spieler auswählen"></div><div class="gear-entry"><div class="armor-total"><span>Gesamt-Armor</span><output id="armor-total">0</output></div><div class="armor-slots"><label for="armorPants">Armor Hose<input id="armorPants" type="number" min="0" step="any" value="0"></label><label for="armorChest">Armor Chest<input id="armorChest" type="number" min="0" step="any" value="0"></label></div><input id="armorGear" type="hidden" value="0"><p id="armor-status" class="armor-status">Armor: noch kein Spieler geladen.</p></div></div></section>
+
+<details id="values"><summary id="values-summary">Skills manuell eingeben</summary>
+<p class="hint">Wähle die Skillstufen wie im Spiel. Health und Hunger sind für den Zeitplan relevant; Armor zeigt die Rüstung aus Skill und Gear. Dodge wird nicht abgefragt.</p>
+<div class="skill-cards">
+<section class="skill-card"><h3>Health</h3><label for="healthLevel">Skillstufe</label><div class="skill-stepper"><button type="button" id="healthMinus" aria-label="health Skillstufe senken">−</button><select id="healthLevel"></select><button type="button" id="healthPlus" aria-label="health Skillstufe erhöhen">+</button></div><div id="health-steps" class="skill-steps" aria-hidden="true"></div><label for="healthBonus">Zusatzwert (z. B. Prestige)<input id="healthBonus" type="number" step="any" value="0"></label><p id="health-preview" class="hint">Wähle deine Stufe.</p></section>
+<section class="skill-card"><h3>Hunger</h3><label for="hungerLevel">Skillstufe</label><div class="skill-stepper"><button type="button" id="hungerMinus" aria-label="hunger Skillstufe senken">−</button><select id="hungerLevel"></select><button type="button" id="hungerPlus" aria-label="hunger Skillstufe erhöhen">+</button></div><div id="hunger-steps" class="skill-steps" aria-hidden="true"></div><label for="hungerBonus">Zusatzwert (z. B. Prestige)<input id="hungerBonus" type="number" step="any" value="0"></label><p id="hunger-preview" class="hint">Nur für die Variante mit Essen nötig.</p></section>
+<section class="skill-card"><h3>Armor</h3><label for="armorLevel">Skillstufe</label><div class="skill-stepper"><button type="button" id="armorMinus" aria-label="armor Skillstufe senken">−</button><select id="armorLevel"></select><button type="button" id="armorPlus" aria-label="armor Skillstufe erhöhen">+</button></div><div id="armor-steps" class="skill-steps" aria-hidden="true"></div><label for="armorBonus">Weitere Armor-Boni<input id="armorBonus" type="number" step="any" value="0"></label><label for="armorEffective">Wirksame Armor (%) · optional überschreiben<input id="armorEffective" type="number" min="0" max="100" step="any" placeholder="automatisch nach Tabelle"></label><p id="armor-preview" class="hint">Skill und Gear werden addiert; die Reduktion wird automatisch berechnet.</p></section>
+</div><div class="skill-actions"><button id="apply-skills" type="button">Skillwerte übernehmen</button><p id="skill-status" class="hint" role="status"></p></div>
+<p id="skill-config-source" class="hint">Skillstufen aus deiner API-Datei · Stand 03.10.2026. Live-Werte werden beim Öffnen geprüft.</p>
+<div class="fields"><label>Health jetzt<input id="current" type="number" min="0" step="0.1" placeholder="z. B. 180"></label><label>Health maximal<input id="maximum" type="number" min="1" step="any" placeholder="aus Skillstufe"></label><label>Health pro Stunde<input id="regen" type="number" min="0" step="any" placeholder="aus Skillstufe"></label><label>Hunger jetzt<input id="hunger" type="number" min="0" step="0.1" placeholder="nur mit Essen"></label><label>Hunger maximal<input id="hungerMax" type="number" min="0" step="any" placeholder="aus Skillstufe"></label><label>Hunger pro Stunde<input id="hungerRegen" type="number" min="0" step="any" placeholder="aus Skillstufe"></label></div><p class="hint">Trage noch deinen aktuellen Health- und gegebenenfalls Hunger-Stand ein. Du kannst die Gesamtwerte auch direkt aus dem Spiel übernehmen. Ohne aktuelle Spieltermine werden volle Stunden als Regenerationszeitpunkte verwendet.</p></details>
+<section class="time-section" aria-label="Einsatzzeit"><div class="deadline"><label for="target-hour">Wieder volle Health am</label><div class="time-controls"><label class="sr-only" for="target-date">Einsatztag</label><input id="target-date" type="date"><label class="sr-only" for="target-hour">Volle Stunde</label><select id="target-hour"></select></div><div id="hour-tiles" class="hour-tiles" aria-label="Einsatzzeit auswählen"></div><input id="target" type="hidden"> <p class="hint" id="timezone"></p></div></section>
+<div id="live" class="live" role="status">Spieltermine werden geladen …</div>
+<section class="comparison" aria-label="Einsatzplan"><article class="result" id="plan-card"><div class="card-head"><h2 id="plan-title">Ohne Essen</h2><label class="food-toggle" for="use-food"><span>Mit Essen</span><span class="switch-track"><input id="use-food" type="checkbox" role="switch"><span class="switch-thumb" aria-hidden="true"></span></span></label></div><div id="food-options" hidden><div class="food-inputs"><span class="food-label">Essen</span><div id="food-choices" class="food-choices" role="radiogroup" aria-label="Essensart"><button type="button" id="choose-bread" role="radio" aria-checked="true">Brot <small>10 %</small></button><button type="button" id="choose-steak" role="radio" aria-checked="false">Steak <small>15 %</small></button><button type="button" id="choose-cookedFish" role="radio" aria-checked="false">Fisch <small>20 %</small></button></div><select id="food" hidden><option value="bread">Brot · 10 % Health</option><option value="steak">Steak · 15 % Health</option><option value="cookedFish">Gekochter Fisch · 20 % Health</option></select><details class="stock-option"><summary>Essensvorrat begrenzen</summary><label for="stock">Maximal verfügbare Stück<input id="stock" type="number" min="0" max="100000" step="1" placeholder="Leer = genug Essen"></label></details></div></div><div aria-live="polite"><div class="result-body" id="without-body"><p class="empty">Lade deinen Spieler oder gib die Health-Werte ein.</p></div><div class="result-body" id="with-body" hidden><p class="empty">Lade deine Werte für den Plan mit Essen.</p></div></div></article></section>
+
+<details class="explanation"><summary>Berechnung kurz erklärt</summary><p>Gesamt-Armor aus Skill und Gear bestimmt die Reduktion und den Health-Verbrauch je Treffer ohne Dodge. Der Plan zeigt den letzten sicheren Balkenstand: Ein weiterer Treffer darf die benötigte Reserve nicht unterschreiten. Es zählen volle Regenerationsticks; Essen wird durch Hunger begrenzt.</p><p id="data-source">Spielwerte werden beim Öffnen geprüft.</p></details>
+<footer>H&amp;H - Rechner <span id="updated">Noch keine Spielerwerte geladen</span></footer>
+</main><script type="module">const SKILL_SNAPSHOT = {"skills":{"armor":{"softCap":40,"levels":{"0":{"value":0,"totalCost":0,"unlockAtLevel":5},"1":{"value":6,"totalCost":1,"cost":1,"unlockAtLevel":5},"2":{"value":12,"totalCost":3,"cost":2,"unlockAtLevel":5},"3":{"value":18,"totalCost":6,"cost":3,"unlockAtLevel":5},"4":{"value":24,"totalCost":10,"cost":4,"unlockAtLevel":5},"5":{"value":30,"totalCost":15,"cost":5,"unlockAtLevel":5},"6":{"value":36,"totalCost":21,"cost":6,"unlockAtLevel":5},"7":{"value":42,"totalCost":28,"cost":7,"unlockAtLevel":5},"8":{"value":48,"totalCost":36,"cost":8,"unlockAtLevel":5},"9":{"value":54,"totalCost":45,"cost":9,"unlockAtLevel":5},"10":{"value":60,"totalCost":55,"cost":10,"unlockAtLevel":5}}},"hunger":{"levels":{"0":{"value":4,"totalCost":0,"isABar":true,"unlockAtLevel":10},"1":{"value":5,"totalCost":1,"cost":1,"unlockAtLevel":10},"2":{"value":6,"totalCost":3,"cost":2,"unlockAtLevel":10},"3":{"value":7,"totalCost":6,"cost":3,"unlockAtLevel":10},"4":{"value":8,"totalCost":10,"cost":4,"unlockAtLevel":10},"5":{"value":9,"totalCost":15,"cost":5,"unlockAtLevel":10},"6":{"value":10,"totalCost":21,"cost":6,"unlockAtLevel":10},"7":{"value":11,"totalCost":28,"cost":7,"unlockAtLevel":10},"8":{"value":12,"totalCost":36,"cost":8,"unlockAtLevel":10},"9":{"value":13,"totalCost":45,"cost":9,"unlockAtLevel":10},"10":{"value":14,"totalCost":55,"cost":10,"unlockAtLevel":10}}},"health":{"levels":{"0":{"value":100,"totalCost":0,"isABar":true,"unlockAtLevel":5},"1":{"value":110,"totalCost":1,"cost":1,"unlockAtLevel":5},"2":{"value":120,"totalCost":3,"cost":2,"unlockAtLevel":5},"3":{"value":130,"totalCost":6,"cost":3,"unlockAtLevel":5},"4":{"value":140,"totalCost":10,"cost":4,"unlockAtLevel":5},"5":{"value":150,"totalCost":15,"cost":5,"unlockAtLevel":5},"6":{"value":160,"totalCost":21,"cost":6,"unlockAtLevel":5},"7":{"value":170,"totalCost":28,"cost":7,"unlockAtLevel":5},"8":{"value":180,"totalCost":36,"cost":8,"unlockAtLevel":5},"9":{"value":190,"totalCost":45,"cost":9,"unlockAtLevel":5},"10":{"value":200,"totalCost":55,"cost":10,"unlockAtLevel":5}}}},"user":{"regenDividedBy":10}};
+
+const HOUR=3600000;
+function skillTotal(config,skill,level,bonus=0){
+  const base=config?.skills?.[skill]?.levels?.[level]?.value;
+  if(!Number.isFinite(base)||!Number.isFinite(bonus)||base+bonus<0)throw Error('Bitte prüfe Skillstufe und Zusatzwert.');
+  return {base,total:base+bonus};
+}
+function armorReduction(total,softCap=40){
+  if(!Number.isFinite(total)||total<0||!Number.isFinite(softCap)||softCap<=0)throw Error('Bitte prüfe Armor und Softcap.');
+  return Math.round(100*total/(total+softCap));
+}
+function healthPerHit(effective,baseCost=10){
+  if(!Number.isFinite(effective)||effective<0||effective>100||!Number.isFinite(baseCost)||baseCost<=0)throw Error('Bitte prüfe den wirksamen Armor-Wert.');
+  return Math.max(1,Math.round(baseCost*(1-effective/100)*10)/10);
+}
+function stoppingHealth(current,minimum,cost,minimumToFight=10){
+  if(![current,minimum,cost,minimumToFight].every(Number.isFinite)||current<minimum||cost<=0)return current;
+  if(current<minimumToFight)return current;
+  const allowed=Math.floor((current-minimum+1e-8)/cost);
+  const available=Math.floor((current-minimumToFight+1e-8)/cost)+1;
+  return Math.max(minimum,Math.round((current-Math.min(allowed,available)*cost)*10)/10);
+}
+function ticksBetween(now,target,next){
+  if(![now,target,next].every(Number.isFinite)||target<=now) return [];
+  let first=next;
+  if(first<=now) first+= (Math.floor((now-first)/HOUR)+1)*HOUR;
+  const count=Math.max(0,Math.floor((target-first)/HOUR)+1);
+  if(count>24*90) throw Error('Bitte plane höchstens 90 Tage im Voraus.');
+  return Array.from({length:count},(_,i)=>first+i*HOUR);
+}
+function simulate(start,s,ticks,food=null){
+  let health=start,hunger=s.hunger,stock=food?.stock??0,used=0;
+  const schedule=[];
+  const eat=(at,remaining)=>{
+    if(!food) return;
+    let amount=0;
+    while(stock>0&&hunger>=1-1e-9&&health+remaining*s.regen<s.maximum-1e-8){
+      health=Math.min(s.maximum,health+food.heal);hunger=Math.max(0,hunger-1);stock--;used++;amount++;
+    }
+    if(amount) schedule.push({at,amount});
+  };
+  eat(s.now,ticks.length);
+  ticks.forEach((at,i)=>{health=Math.min(s.maximum,health+s.regen);if(food)hunger=Math.min(s.hungerMax,hunger+s.hungerRegen);eat(at,ticks.length-i-1);});
+  return {health,used,schedule};
+}
+function plan(s,ticks,food=null){
+  if(!Number.isFinite(s.maximum)||s.maximum<=0||!Number.isFinite(s.current)||s.current<0||s.current>s.maximum||!Number.isFinite(s.regen)||s.regen<0)throw Error('Bitte prüfe die Health-Werte.');
+  if(food&&(![s.hunger,s.hungerMax,s.hungerRegen,food.heal,food.stock].every(Number.isFinite)||s.hunger<0||s.hungerMax<0||s.hunger>s.hungerMax||s.hungerRegen<0||food.heal<=0||food.stock<0||!Number.isInteger(food.stock)))throw Error('Bitte prüfe Hunger und Essensmenge.');
+  let low=0,high=s.maximum;
+  for(let i=0;i<50;i++){const mid=(low+high)/2;if(simulate(mid,s,ticks,food).health>=s.maximum-1e-8)high=mid;else low=mid;}
+  const minimum=Math.min(s.maximum,Math.max(0,Math.ceil(high*10-1e-7)/10));
+  const reachable=s.current+1e-8>=minimum;
+  const outcome=simulate(reachable?minimum:s.current,s,ticks,food);
+  return {minimum,percent:minimum/s.maximum*100,spendable:reachable?Math.max(0,s.current-minimum):0,reachable,...outcome,ticks:ticks.length};
+}
+
+const $=id=>document.getElementById(id), ids=['current','maximum','regen','hunger','hungerMax','hungerRegen'];
+const state={config:null,next:null,loadedAt:null,userId:null,profile:null,busy:false,manual:false,armor:null};
+const format=n=>new Intl.NumberFormat('de-DE',{maximumFractionDigits:1}).format(n);
+const clock=t=>new Intl.DateTimeFormat('de-DE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Berlin'}).format(new Date(t));
+const foodNames={bread:'Brot',steak:'Steak',cookedFish:'Gekochter Fisch'};
+function skillConfig(){return state.config??SKILL_SNAPSHOT;}
+function populateSkills(){
+  for(const name of ['health','hunger','armor']){
+    const select=$(name+'Level'),previous=select.value;
+    select.replaceChildren();const blank=document.createElement('option');blank.value='';blank.textContent='Stufe wählen';select.append(blank);
+    for(const [level,entry] of Object.entries(skillConfig().skills?.[name]?.levels??{}).sort((a,b)=>Number(a[0])-Number(b[0]))){const option=document.createElement('option');option.value=level;option.textContent='Stufe '+level+' · '+format(entry.value)+(name==='armor'?' Armor':'');select.append(option);}
+    select.value=previous;previewSkills();
+  }
+}
+function previewSkills(){
+  for(const name of ['health','hunger','armor']){
+    const level=$(name+'Level').value;
+    $(name+'-steps').replaceChildren();for(let i=1;i<=10;i++){const pip=document.createElement('span');pip.className=level!==''&&i<=Number(level)?'filled':'';$(name+'-steps').append(pip);}
+    if(level===''){$(name+'-preview').textContent=name==='hunger'?'Nur für die Variante mit Essen nötig.':'Wähle deine Stufe.';continue;}
+    try{const bonus=number(name+'Bonus'),v=skillTotal(skillConfig(),name,level,bonus);
+      if(name==='armor'){const gear=number('armorGear');if(!Number.isFinite(gear)||gear<0)throw Error('Bitte prüfe die Gear-Armor.');const total=v.total+gear,effective=$('armorEffective').value!==''?number('armorEffective'):armorReduction(total,skillConfig().skills.armor.softCap);$(name+'-preview').textContent=format(total)+' Armor → '+format(effective)+' % Reduktion → '+format(healthPerHit(effective,state.config?.battle?.healthCost??10))+' Health je Treffer ohne Dodge.';}
+      else {const divisor=skillConfig().user?.regenDividedBy;if(!Number.isFinite(divisor)||divisor<=0)throw Error('Regeneration konnte nicht ermittelt werden.');$(name+'-preview').textContent=format(v.total)+' maximal · +'+format(v.total/divisor)+' pro Stunde';}
+    }catch(e){$(name+'-preview').textContent=e.message;}
+  }
+}
+function armorStatus(){
+  const a=state.armor;
+  $('armor-total').textContent=a?format(a.total):'0';
+  $('armor-status').textContent=a?'Armor: '+format(a.base)+' Skill + '+format(a.gear)+' Gear'+(a.bonus?' + '+format(a.bonus)+' weitere Boni':'')+' = '+format(a.total)+' Armor · '+(Number.isFinite(a.effective)?format(a.effective)+' % Reduktion · '+format(healthPerHit(a.effective,state.config?.battle?.healthCost??10))+' Health je Treffer ohne Dodge':'wirksamer Wert noch nicht eingetragen'):'Armor: noch keine Werte übernommen.';
+}
+$('apply-skills').addEventListener('click',()=>{
+  try{
+    if($('healthLevel').value==='')throw Error('Wähle zuerst deine Health-Skillstufe.');
+    const cfg=skillConfig(),divisor=cfg.user?.regenDividedBy;
+    if(!Number.isFinite(divisor)||divisor<=0)throw Error('Bitte gib die Regeneration direkt in den Gesamtwerten ein.');
+    const health=skillTotal(cfg,'health',$('healthLevel').value,number('healthBonus'));
+    if(health.total<=0)throw Error('Health maximal muss größer als null sein.');
+    const hunger=$('hungerLevel').value!==''?skillTotal(cfg,'hunger',$('hungerLevel').value,number('hungerBonus')):null;
+    let armor=null;
+    if($('armorLevel').value!==''){const v=skillTotal(cfg,'armor',$('armorLevel').value,number('armorBonus')),gear=number('armorGear'),total=v.total+gear,effective=$('armorEffective').value!==''?number('armorEffective'):armorReduction(total,cfg.skills.armor.softCap);if(!Number.isFinite(gear)||gear<0||!Number.isFinite(effective)||effective<0||effective>100)throw Error('Bitte prüfe Gear-Armor und wirksame Armor.');armor={base:v.base,gear,bonus:number('armorBonus'),total,effective};}
+    $('maximum').value=health.total;$('regen').value=health.total/divisor;
+    $('hungerMax').value=hunger?.total??'';$('hungerRegen').value=hunger?hunger.total/divisor:'';
+    state.armorInvalid=false;state.armor=armor;state.manual=true;armorStatus();$('updated').textContent='Skillwerte manuell übernommen';$('skill-status').textContent='Übernommen. Aktuellen Health- und Hunger-Stand unten prüfen.';$('skill-status').classList.remove('error');render();
+  }catch(e){$('skill-status').textContent=e.message;$('skill-status').classList.add('error');}
+});
+for(const id of ['healthLevel','healthBonus','hungerLevel','hungerBonus','armorLevel','armorBonus','armorEffective'])$(id).addEventListener('input',()=>{if(['armorLevel','armorBonus'].includes(id))$('armorEffective').value='';$('skill-status').textContent='Änderungen mit „Skillwerte übernehmen“ anwenden.';previewSkills();});
+function updateGearSlots(){
+  const pants=number('armorPants'),chest=number('armorChest');
+  $('armorGear').value=Number.isFinite(pants)&&pants>=0&&Number.isFinite(chest)&&chest>=0?pants+chest:'';
+  $('armorEffective').value='';
+  const gear=number('armorGear');
+  if(!Number.isFinite(gear)||gear<0){$('armor-status').textContent='Bitte gültige Gear-Armor eingeben.';state.armorInvalid=true;render();return;}
+  state.armorInvalid=false;
+  if(state.armor){const a=state.armor,total=a.base+a.bonus+gear;state.armor={...a,gear,total,effective:armorReduction(total,skillConfig().skills.armor.softCap)};armorStatus();}
+  else {state.armor={base:0,bonus:0,gear,total:gear,effective:armorReduction(gear,skillConfig().skills.armor.softCap)};armorStatus();}
+  previewSkills();render();
+}
+for(const id of ['armorPants','armorChest'])$(id).addEventListener('input',updateGearSlots);
+function syncFoodChoices(){for(const name of ['bread','steak','cookedFish']){const b=$('choose-'+name),pct=state.config?.items?.[name]?.flatStats?.healthRegenPercent;b.setAttribute('aria-checked',String($('food').value===name));if(Number.isFinite(pct))b.innerHTML=(name==='cookedFish'?'Fisch':foodNames[name])+' <small>'+format(pct)+' %</small>';}}
+for(const name of ['bread','steak','cookedFish'])$('choose-'+name).addEventListener('click',()=>{$('food').value=name;syncFoodChoices();render();});
+syncFoodChoices();
+function foodMode(){const on=$('use-food').checked;$('food-options').hidden=!on;$('without-body').hidden=on;$('with-body').hidden=!on;$('plan-title').textContent=on?'Mit Essen':'Ohne Essen';}
+$('use-food').addEventListener('change',()=>{foodMode();render();});foodMode();
+for(const name of ['health','hunger','armor'])for(const [suffix,change] of [['Minus',-1],['Plus',1]])$(name+suffix).addEventListener('click',()=>{const select=$(name+'Level'),levels=Array.from(select.options).map(o=>Number(o.value)).filter((_,i)=>i>0);select.value=String(Math.max(0,Math.min(Math.max(...levels),Number(select.value||0)+change)));if(name==='armor')$('armorEffective').value='';$('skill-status').textContent='Änderungen mit „Skillwerte übernehmen“ anwenden.';previewSkills();});
+populateSkills();armorStatus();
+async function api(name,input={}){
+  const r=await fetch('https://api2.warera.io/trpc/'+name+'?input='+encodeURIComponent(JSON.stringify(input)),{cache:'no-store',signal:AbortSignal.timeout(15000)});
+  const j=await r.json();if(!r.ok||j.error||!j.result?.data)throw Error(r.status===429?'Zu viele Abfragen. Bitte warte eine Minute.':'Die Spielabfrage ist gerade nicht verfügbar.');return j.result.data;
+}
+function number(id){const v=$(id).value;return v.trim()===''?NaN:Number(v);}
+function nextHour(now){return (Math.floor(now/HOUR)+1)*HOUR;}
+function berlinToEpoch(value){
+  if(!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value))return NaN;
+  const [y,m,d,h,min]=value.match(/\d+/g).map(Number),base=Date.UTC(y,m-1,d,h,min);
+  const formatter=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+  const wanted=value.replace('T',' ');const candidates=[base-HOUR,base-2*HOUR].filter(t=>formatter.format(t)===wanted);
+  return candidates.length?Math.max(...candidates):NaN;
+}
+function dateInput(t){return new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(t)).replace(' ','T');}
+$('target').value=dateInput(nextHour(Date.now())+3*HOUR);
+for(let h=0;h<24;h++){const option=document.createElement('option');option.value=String(h).padStart(2,'0');option.textContent=option.value+':00';$('target-hour').append(option);}
+function syncHours(){
+  $('target-date').value=$('target').value.slice(0,10);$('target-hour').value=$('target').value.slice(11,13);
+  $('hour-tiles').replaceChildren();
+  const start=nextHour(Date.now());
+  for(let i=0;i<24;i++){const at=start+i*HOUR,value=dateInput(at),b=document.createElement('button');b.type='button';b.textContent=value.slice(11);b.title=clock(at);b.className='hour-tile'+(value===$('target').value?' selected':'');b.setAttribute('aria-pressed',String(value===$('target').value));b.addEventListener('click',()=>{$('target').value=value;syncHours();render();});$('hour-tiles').append(b);}
+}
+for(const id of ['target-date','target-hour'])$(id).addEventListener('input',()=>{$('target').value=$('target-date').value+'T'+$('target-hour').value+':00';syncHours();render();});
+syncHours();
+$('timezone').textContent='Deutsche Zeit · Europe/Berlin';
+async function init(){
+  const results=await Promise.allSettled([api('gameConfig.getGameConfig'),api('gameConfig.getDates')]);
+  if(results[0].status==='fulfilled'){state.config=results[0].value;populateSkills();$('skill-config-source').textContent='Skillstufen und Regeneration aus der aktuell geladenen Spielkonfiguration.';const items=state.config.items;for(const option of $('food').options){const p=items?.[option.value]?.flatStats?.healthRegenPercent;option.textContent=foodNames[option.value]+(Number.isFinite(p)?' · '+format(p)+' % Health':' · nicht verfügbar');option.disabled=!Number.isFinite(p)||p<=0;} $('data-source').textContent='Profil und Spielkonfiguration liefern die aktuellen Werte.';}
+  if(results[1].status==='fulfilled'){const n=Date.parse(results[1].value.nextRegenAt);if(Number.isFinite(n))state.next=n;}
+  render();
+}
+function fillProfile(p){
+  const h=p.skills?.health,g=p.skills?.hunger;
+  if(!h||![h.currentBarValue,h.total,h.hourlyBarRegen].every(Number.isFinite))throw Error('Dieses Profil liefert keine vollständigen Health-Werte. Gib sie bitte selbst ein.');
+  const values={current:h.currentBarValue,maximum:h.total,regen:h.hourlyBarRegen,hunger:g?.currentBarValue,hungerMax:g?.total,hungerRegen:g?.hourlyBarRegen};
+  ids.forEach(id=>$(id).value=Number.isFinite(values[id])?values[id]:'');
+  const cfg=skillConfig();
+  for(const [name,skill] of [['health',h],['hunger',g]]){const level=skill?.level,base=cfg.skills?.[name]?.levels?.[level]?.value;$(name+'Level').value=Number.isFinite(base)?String(level):'';$(name+'Bonus').value=Number.isFinite(base)&&Number.isFinite(skill?.total)?skill.total-base:0;}
+  const a=p.skills?.armor,armorBase=cfg.skills?.armor?.levels?.[a?.level]?.value;
+  $('armorLevel').value=Number.isFinite(armorBase)?String(a.level):'';
+  if(a&&Number.isFinite(a.total)){const base=Number.isFinite(armorBase)?armorBase:a.value??0,gear=number('armorGear'),bonus=(a.value??base)-base,total=base+bonus+(Number.isFinite(gear)?gear:0),effective=armorReduction(total,cfg.skills.armor.softCap);state.armor={base,gear:Number.isFinite(gear)?gear:0,bonus,total,effective};$('armorBonus').value=bonus;$('armorEffective').value='';}else{state.armor=null;$('armorBonus').value=0;$('armorEffective').value='';}
+  previewSkills();armorStatus();$('skill-status').textContent='Skillstufen und Gear-Werte aus deinem Profil übernommen.';
+  state.armorInvalid=false;state.profile=p;state.userId=p._id;state.loadedAt=Date.now();state.manual=false;
+  $('player').value=p.username??p._id;$('matches').replaceChildren();
+  $('profile-status').textContent=(p.username??'Spieler')+' · '+format(h.currentBarValue)+' / '+format(h.total)+' Health · +'+format(h.hourlyBarRegen)+' pro Stunde';
+  $('profile-status').classList.remove('error');$('values-summary').textContent='Skills ansehen oder manuell eingeben';$('values').open=false;
+  $('updated').textContent='Spielerwerte geladen: '+clock(state.loadedAt);render();
+}
+async function loadById(id){const p=await api('user.getUserById',{userId:id});fillProfile(p);}
+async function lookup(raw){
+  if(state.busy)return;
+  state.busy=true;$('load').disabled=true;$('profile-status').textContent='Spielerwerte werden geladen …';$('matches').replaceChildren();
+  try{
+    const [cfg,dates]=await Promise.allSettled([api('gameConfig.getGameConfig'),api('gameConfig.getDates')]);
+    if(cfg.status==='fulfilled'){state.config=cfg.value;populateSkills();$('skill-config-source').textContent='Skillstufen und Regeneration aus der aktuell geladenen Spielkonfiguration.';}
+    if(dates.status==='fulfilled'&&Number.isFinite(Date.parse(dates.value.nextRegenAt)))state.next=Date.parse(dates.value.nextRegenAt);
+    const match=raw.match(/(?:^|\/|userId=)([a-f0-9]{24})(?:$|[/?&#])/i);
+    if(match){await loadById(match[1]);return;}
+    const found=await api('search.searchUsers',{searchText:raw.trim()});
+    const entries=Array.isArray(found)?found:found.users??found.items;
+    if(!Array.isArray(entries)||!entries.length)throw Error('Kein Spieler gefunden. Versuche deinen Profil-Link oder deine Spieler-ID.');
+    const profiles=await Promise.all(entries.slice(0,10).map(p=>typeof p==='string'?api('user.getUserById',{userId:p}):p));
+    const exact=profiles.filter(p=>p.username?.toLowerCase()===raw.trim().toLowerCase());
+    if(exact.length===1){fillProfile(exact[0]);return;}if(profiles.length===1){fillProfile(profiles[0]);return;}
+    $('profile-status').textContent='Wähle deinen Spieler aus:';
+    for(const p of profiles){const b=document.createElement('button');b.type='button';b.textContent=(p.username??p._id)+' · '+(Number.isFinite(p.skills?.health?.total)?format(p.skills.health.total)+' max. Health':'Profil');b.onclick=()=>fillProfile(p);$('matches').append(b);}
+  }catch(e){$('profile-status').textContent=e.message||'Spielerwerte konnten nicht geladen werden.';$('profile-status').classList.add('error');}
+  finally{state.busy=false;$('load').disabled=false;render();}
+}
+$('lookup').addEventListener('submit',e=>{e.preventDefault();lookup($('player').value);});
+function resultMarkup(p,s,food){
+  const required=p.minimum;
+  let stop=p.minimum;
+  if(p.reachable&&Number.isFinite(state.armor?.effective)){
+    const cost=healthPerHit(state.armor.effective,state.config?.battle?.healthCost??10);
+    stop=stoppingHealth(s.current,required,cost,state.config?.battle?.healthCost??10);
+    const outcome=simulate(stop,s,s.tickTimes,food);p={...p,...outcome,minimum:stop,percent:stop/s.maximum*100,spendable:s.current-stop};
+  }
+  const atTarget=p.reachable?s.maximum:p.health;
+  const label=p.reachable?'Mindestens stehen lassen':'Benötigter Health-Stand jetzt';
+  const pct=format(p.percent),nowpct=format(s.current/s.maximum*100);
+  let recommendation=p.reachable?(p.spendable>0?'Kämpfe bis <strong>'+format(p.minimum)+' Health</strong>.':'<strong>Jetzt keine weitere Health verbrauchen.</strong>'):'<strong class="warn">Zur Einsatzzeit noch nicht voll.</strong> Jetzt nicht weiter kämpfen.';
+  let markup='<p class="metric-label">'+label+'</p><div class="big">'+format(p.minimum)+' <small>/ '+format(s.maximum)+' Health</small></div>';
+  markup+='<div class="bar" role="img" aria-label="Mindestens '+pct+' Prozent Health stehen lassen"><div class="reserve" style="width:'+p.percent+'%"></div><div class="safe" style="width:'+(100-p.percent)+'%"></div><span class="marker" style="left:'+p.percent+'%"></span></div><div class="bar-key"><span>0</span><span>Stopp bei '+pct+' %</span><span>100 %</span></div>';
+  markup+='<p class="recommendation">'+recommendation+'</p><div class="stats"><p>Jetzt nutzbar<strong>'+format(p.spendable)+' Health</strong></p><p>Beim Einsatz<strong>'+format(atTarget)+' / '+format(s.maximum)+'</strong></p></div>';
+  markup+='<p class="hint">Aktuell '+nowpct+' % · '+p.ticks+' Regenerationszeitpunkte · +'+format(p.ticks*s.regen)+' Health durch Regeneration (vor Begrenzung)</p>';
+  if(state.armor)markup+='<p class="hint">'+format(healthPerHit(state.armor.effective,state.config?.battle?.healthCost??10))+' Health je Treffer ohne Dodge · rechnerisch mindestens '+format(required)+' Health stehen lassen</p>';
+  if(food){markup+='<p class="hint">'+p.used+(food.unlimited?'':' von '+food.stock)+' Stück eingeplant · '+format(food.heal)+' Health pro Stück</p>';if(p.schedule.length)markup+='<ol class="schedule">'+p.schedule.map(x=>'<li><strong>'+(x.at===s.now?'Jetzt, nach dem Kämpfen':clock(x.at))+'</strong>: '+x.amount+' × '+foodNames[$('food').value]+' essen</li>').join('')+'</ol>';else markup+='<p class="hint">Für diesen Plan brauchst du kein Essen.</p>';}
+  return markup;
+}
+function render(){
+  syncFoodChoices();
+  const now=Date.now(),target=berlinToEpoch($('target').value);
+  let next=state.next??nextHour(now);if(next<=now)next+=(Math.floor((now-next)/HOUR)+1)*HOUR;
+  $('live').textContent=(state.next?'Nächste Regeneration: ':'Regeneration geschätzt: ')+clock(next)+' · '+(Number.isFinite(target)?'Einsatz: '+clock(target):'Einsatzzeit prüfen');
+  const s={now,current:number('current'),maximum:number('maximum'),regen:number('regen'),hunger:number('hunger'),hungerMax:number('hungerMax'),hungerRegen:number('hungerRegen')};
+  if(state.armorInvalid){for(const id of ['without-body','with-body'])$(id).innerHTML='<p class="empty error">Bitte gültige Gear-Armor eingeben.</p>';return;}
+  if(state.loadedAt&&!state.manual){let expiry=state.next??nextHour(state.loadedAt);if(expiry<=state.loadedAt)expiry+=(Math.floor((state.loadedAt-expiry)/HOUR)+1)*HOUR;if(now>=expiry){for(const id of ['without-body','with-body'])$(id).innerHTML='<p class="empty">Seit dem Laden gab es eine Regeneration. Lade die Spielerwerte erneut, damit der Stopp-Punkt aktuell bleibt.</p>';return;}}
+  if(!Number.isFinite(s.current)||!Number.isFinite(s.maximum)||!Number.isFinite(s.regen)){$('without-body').innerHTML='<p class="empty">Lade deinen Spieler oder ergänze die drei Health-Werte.</p>';$('with-body').innerHTML='<p class="empty">Für diesen Plan werden zuerst deine Health-Werte benötigt.</p>';return;}
+  if(!Number.isFinite(target)||target<=now){for(const id of ['without-body','with-body'])$(id).innerHTML='<p class="empty error">Wähle eine gültige Einsatzzeit in der Zukunft.</p>';return;}
+  try{
+    const ticks=ticksBetween(now,target,next);s.tickTimes=ticks;$('without-body').innerHTML=resultMarkup(plan(s,ticks),s);
+    const unlimited=$('stock').value==='',stock=unlimited?100000:number('stock'),pct=state.config?.items?.[$('food').value]?.flatStats?.healthRegenPercent;
+    if(!Number.isFinite(pct)||pct<=0){$('with-body').innerHTML='<p class="empty error">Essenseffekte konnten nicht geladen werden. Bitte lade die Werte erneut.</p>';return;}
+    if(![s.hunger,s.hungerMax,s.hungerRegen].every(Number.isFinite)){$('with-body').innerHTML='<p class="empty">Für Essen fehlen die Hunger-Werte. Lade deinen Spieler oder ergänze sie unter „Werte“.</p>';return;}
+    const food={stock,heal:s.maximum*pct/100,unlimited};$('with-body').innerHTML=resultMarkup(plan(s,ticks,food),s,food);
+  }catch(e){$('with-body').innerHTML='<p class="empty error"></p>';$('with-body').firstChild.textContent=e.message;if(e.message.includes('Health')||e.message.includes('90 Tage')){$('without-body').innerHTML='<p class="empty error"></p>';$('without-body').firstChild.textContent=e.message;}}
+}
+for(const id of [...ids,'target','food','stock'])$(id).addEventListener('input',()=>{if(ids.includes(id)){state.manual=true;$('updated').textContent='Werte manuell angepasst';}render();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)render();});
+setInterval(render,30000);
+if(document.modelContext?.registerTool){const life=new AbortController();window.addEventListener('pagehide',()=>life.abort(),{once:true});try{Promise.resolve(document.modelContext.registerTool({name:'configure_health_plan',title:'Health-Einsatz planen',description:'Setzt die Einsatzzeit und optional Essen im sichtbaren Einsatzplaner. Führt keine Spielaktionen aus.',inputSchema:{type:'object',properties:{target:{type:'string',description:'Einsatzzeit YYYY-MM-DDTHH:mm in Europe/Berlin'},food:{type:'string',enum:['bread','steak','cookedFish']},stock:{type:'integer',minimum:0,maximum:100000}},required:['target'],additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute(input){if(!input||typeof input!=='object'||Object.keys(input).some(k=>!['target','food','stock'].includes(k))||!Number.isFinite(berlinToEpoch(input.target))||!input.target.endsWith(':00')||berlinToEpoch(input.target)<=Date.now()||berlinToEpoch(input.target)>Date.now()+90*24*HOUR||(input.food!==undefined&&!Object.hasOwn(foodNames,input.food))||(input.stock!==undefined&&(!Number.isInteger(input.stock)||input.stock<0||input.stock>100000)))throw Error('Ungültige Planungswerte.');$('target').value=input.target;syncHours();if(input.food!==undefined)$('food').value=input.food;if(input.stock!==undefined)$('stock').value=input.stock;render();return {target:$('target').value,without:$('without-body').innerText,with:$('with-body').innerText};}},{signal:life.signal})).catch(()=>{});}catch{}}
+init();
+</script></body></html>
