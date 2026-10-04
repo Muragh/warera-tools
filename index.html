@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Eine zentrale Übersicht für praktische WarEra-Rechner und Tools.">
+  <title>WarEra Tools</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root { color-scheme: dark; --bg: #0a111c; --panel: #111e2e; --line: #26364a; --text: #edf4fd; --muted: #a1b3c8; --accent: #3de0a0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, sans-serif; }
+    main { max-width: 960px; margin: auto; padding: 48px 24px; }
+    header { padding-bottom: 32px; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.2; }
+    header p, .card p, footer { color: var(--muted); }
+    .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px; }
+    .card { padding: 26px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+    h2 { margin: 0; font-size: 1.4rem; }
+    .card p { margin: 12px 0 24px; }
+    .open { display: inline-block; padding: 10px 18px; border-radius: 6px; background: var(--accent); color: #082018; text-decoration: none; font-weight: 700; }
+    .open:hover { background: #74edbf; }
+    a:focus-visible { outline: 3px solid #7ab7ff; outline-offset: 5px; }
+    footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); font-size: .875rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>WarEra Tools</h1>
+      <p>Praktische Rechner für deine Planung in WarEra. Weitere Tools ergänzen diese Übersicht nach und nach.</p>
+    </header>
+    <section class="tools" aria-label="Verfügbare Tools">
+      <!-- Weitere Tools können hier als zusätzliche article-Karten ergänzt werden. -->
+      <article class="card">
+        <h2>H&amp;H-Rechner</h2>
+        <p>Plane deine Health zur Einsatzzeit und vergleiche die Regeneration mit und ohne Essen.</p>
+        <a class="open" href="/hh-calculator/">H&amp;H-Rechner öffnen</a>
+      </article>
+    </section>
+    <footer>Inoffizielles Community-Projekt. Diese Startseite verwendet kein Tracking, keine Cookies und keine externen Ressourcen.</footer>
+  </main>
+</body>
+</html>
